@@ -16,7 +16,8 @@
     "demo:issues": "node example/issue-lab.js",
     "demo:truecolor": "node example/truecolor-panel.js",
     "demo:gradient-string": "node example/gradient-string.js",
-    "test:gradient-string": "node test/gradient-string.js"
+    "test:gradient-string": "node test/gradient-string.js",
+    "test:markdown-ansi": "node test/markdown-ansi.js"
   },
   "devDependencies": {
     "gradient-string": "^2.0.2"
