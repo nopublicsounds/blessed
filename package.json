@@ -12,6 +12,15 @@
   "bugs": { "url": "http://github.com/chjj/blessed/issues" },
   "keywords": ["curses", "tui", "tput", "terminfo", "termcap"],
   "tags": ["curses", "tui", "tput", "terminfo", "termcap"],
+  "scripts": {
+    "demo:issues": "node example/issue-lab.js",
+    "demo:truecolor": "node example/truecolor-panel.js",
+    "demo:gradient-string": "node example/gradient-string.js",
+    "test:gradient-string": "node test/gradient-string.js"
+  },
+  "devDependencies": {
+    "gradient-string": "^2.0.2"
+  },
   "engines": {
     "node": ">= 0.8.0"
   },

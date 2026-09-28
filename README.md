@@ -36,6 +36,33 @@ The blessed API itself has gone on to inspire [termui][termui] for Go.
 $ npm install blessed
 ```
 
+## Issue lab
+
+Run the interactive issue lab to visually inspect emoji cell width, truecolor
+output, textbox focus, and mouse behavior around child processes:
+
+``` bash
+$ npm run demo:issues
+```
+
+Use `Tab` or the mouse to switch textboxes, `e` to append an emoji line, `x`
+to open a shell for mouse testing, and `q` to exit.
+
+To visually inspect truecolor output, render a six-level RGB cube with all 216
+channel combinations:
+
+``` bash
+$ npm run demo:truecolor
+```
+
+Test `gradient-string` ANSI truecolor output through Blessed's renderer, or
+inspect it interactively:
+
+``` bash
+$ npm run test:gradient-string
+$ npm run demo:gradient-string
+```
+
 ## Example
 
 This will render a box with line borders containing the text `'Hello world!'`,
@@ -331,6 +358,10 @@ The screen on which every other node renders.
 - __forceUnicode__ - Force blessed to use unicode even if it is not detected
   via terminfo, env variables, or windows code page. If value is `true` unicode
   is forced. If value is `false` non-unicode is forced (default: `null`).
+- __trueColor__ - Emit 24-bit SGR colors for hexadecimal (`#rrggbb`) and RGB
+  array style values. Enable this only for truecolor terminals; otherwise
+  blessed continues to map those values to the xterm-256 palette (default:
+  `false`).
 - __input/output__ - Input and output streams. `process.stdin`/`process.stdout`
   by default, however, it could be a `net.Socket` if you want to make a program
   that runs over telnet or something of that nature.
