@@ -35,4 +35,22 @@ screen.render();
 assert.ok(/\x1b\[38;2;255;0;0m/.test(box.screenshot()));
 assert.ok(/\x1b\[38;2;0;0;255m/.test(box.screenshot()));
 
+var attr = screen.dattr;
+var last;
+
+for (var i = 0; i < 300; i++) {
+  last = [i % 256, (i / 256) | 0, 0];
+  attr = screen.attrCode(
+    '\x1b[38;2;' + last.join(';') + 'm',
+    attr,
+    screen.dattr
+  );
+}
+
+assert.strictEqual(
+  screen.codeAttr(attr),
+  '\x1b[38;2;' + last.join(';') + 'm'
+);
+assert.ok(screen._truecolorAttrNext > 300);
+
 screen.destroy();

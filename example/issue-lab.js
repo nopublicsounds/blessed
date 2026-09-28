@@ -114,11 +114,10 @@ shades.forEach(function(shade, index) {
   });
 });
 
-var color = screen._attrColor('#123456');
+var color = colorPanel.sattr({ fg: '#123456' });
 colorPanel.setContent(
   'Requested RGB: #123456\n'
-  + 'Truecolor slot: ' + color + '\n'
-  + 'Output SGR: ' + JSON.stringify(screen.codeAttr((color << 9) | 0x1ff))
+  + 'Output SGR: ' + JSON.stringify(screen.codeAttr(color))
 );
 
 var execPanel = blessed.box({
